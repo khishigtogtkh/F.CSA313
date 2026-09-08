@@ -16,7 +16,7 @@ test('Амжилттай нэвтрэх', async ({ page }) => {
     .click();
 
   await expect(
-    page.getByText('Wrong Products')
+    page.getByText('Products')
   ).toBeVisible();
 
   await expect(page).toHaveURL(/inventory/);

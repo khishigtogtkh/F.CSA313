@@ -1,30 +1,44 @@
 import { test, expect } from '@playwright/test';
 
 test('Амжилттай нэвтрэх', async ({ page }) => {
-
-  // 1. Website нээх
   await page.goto('https://www.saucedemo.com');
 
-  await page 
+  await page
     .getByPlaceholder('Username')
     .fill('standard_user');
 
-  await page 
+  await page
     .getByPlaceholder('Password')
     .fill('secret_sauce');
 
-  await page 
-    .getByRole('button', {name: 'Login'})
+  await page
+    .getByRole('button', { name: 'Login' })
     .click();
 
   await expect(
-    page.getByText('Products')
+    page.getByText('Wrong Products')
   ).toBeVisible();
 
   await expect(page).toHaveURL(/inventory/);
+
+  await page
+    .getByRole('button', { name: 'Open Menu' })
+    .click();
+
+  await page
+    .getByText('Logout')
+    .click();
+
+  await expect(page).toHaveURL('https://www.saucedemo.com/');
+
+  await expect(
+    page.getByRole('button', { name: 'Login' })
+  ).toBeVisible();
 });
 
+
 test('Буруу нууц үгээр нэвтрэх', async ({ page }) => {
+
   await page.goto('https://www.saucedemo.com');
 
   await page
@@ -44,7 +58,9 @@ test('Буруу нууц үгээр нэвтрэх', async ({ page }) => {
   ).toBeVisible();
 });
 
+
 test('Нэвтэрсний дараа бараа сагсанд нэмэх', async ({ page }) => {
+
   await page.goto('https://www.saucedemo.com');
 
   await page
@@ -71,4 +87,18 @@ test('Нэвтэрсний дараа бараа сагсанд нэмэх', asy
   await expect(
     page.locator('.shopping_cart_badge')
   ).toHaveText('1');
+
+  await page
+    .getByRole('button', { name: 'Open Menu' })
+    .click();
+
+  await page
+    .getByText('Logout')
+    .click();
+
+  await expect(page).toHaveURL('https://www.saucedemo.com/');
+
+  await expect(
+    page.getByRole('button', { name: 'Login' })
+  ).toBeVisible();
 });

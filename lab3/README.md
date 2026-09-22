@@ -276,3 +276,24 @@ Chaos туршилтаар `/pay` endpoint-ийн error rate 18.05% болж, 8%
 Иймээс нэг server crash нь availability болон reliability гэсэн хоёр SLO-д зэрэг нөлөөлсөн.
 
 Availability болон application reliability-г илүү зөв тусгаарлахын тулд server connectivity failure болон `/pay` endpoint-ийн application-level HTTP 500 алдааг тусдаа custom metric эсвэл тусдаа failure төрлөөр хэмжиж болно.
+
+## 7. Intentional Threshold Failure
+
+k6 threshold ажиллаж байгаа эсэхийг шалгахын тулд `/report` endpoint-ийн performance threshold-ийг зориудаар `p(95) < 100 ms` болгон өөрчилж `slo-test-fail.js` файлаар туршсан.
+
+`/report` endpoint нь 200–400 ms зориудын сааталтай тул 100 ms-ийн threshold-ийг хангах боломжгүй.
+
+Туршилтын бодит үр дүн:
+
+* `/report` threshold: `p(95) < 100 ms`
+* Actual `/report` p95: `389 ms`
+* Result: `FAIL`
+* k6 exit code: `99`
+
+Бусад threshold-үүд:
+
+* `/cart/add` p95: `2.94 ms` — PASS
+* `/pay` error rate: `4.93%` — PASS
+* Checks success rate: `98.35%` — PASS
+
+Ингэснээр зөвхөн `/report`-ийн зориуд эвдсэн threshold FAIL болсон. k6 нь threshold зөрчигдөх үед non-zero exit code буцааж байгаа тул CI pipeline чанарын шаардлага хангаагүй build-ийг автоматаар зогсоох боломжтой.

@@ -108,12 +108,12 @@ curl -X POST http://localhost:3000/pay
 * [x] Local API үүсгэсэн
 * [x] `results/` хавтас үүсгэсэн
 * [x] k6 test файлуудын бүтэц үүсгэсэн
-* [ ] Quality scenario бичих
-* [ ] SLO тодорхойлох
-* [ ] k6 threshold хэрэгжүүлэх
-* [ ] PASS test хийх
-* [ ] Chaos test хийх
-* [ ] Intentional FAIL test хийх
+* [x] Quality scenario бичих
+* [x] SLO тодорхойлох
+* [x] k6 threshold хэрэгжүүлэх
+* [x] PASS test хийх
+* [x] Chaos test хийх
+* [x] Intentional FAIL test хийх
 
 ## 1. Чанарын сценарио
 

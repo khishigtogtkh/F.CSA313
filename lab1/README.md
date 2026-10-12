@@ -71,3 +71,28 @@ Playwright Codegen-ийг дараах командаар туршсан:
 
 ```bash
 npx playwright codegen https://www.saucedemo.com
+
+
+ - Playwright нь browser-уудыг өөрөө удирдаж,
+    Chromium/Firefox/WebKit дээр нэг API-аар
+    тестлэдэг.
+
+  - Auto-wait нь элемент бэлэн болохыг хүлээдэг
+    тул тогтворгүй тест багасна.
+
+  - Trace, screenshot, video зэрэг debugging
+    хэрэгслүүд шууд байдаг.
+
+  - Selenium нь олон хэл, grid болон хуучин
+    enterprise орчинд өргөн хэрэглэгддэг.
+
+  - Энэ лабораторид Playwright-ийг хурдан
+    тохиргоо, parallel project, codegen-ийн давуу
+    талаас сонгосон.
+
+  - XPath ашиглаагүй; DOM бүтэц эсвэл CSS class
+    өөрчлөгдөхөд XPath амархан эвдэрдэг.
+
+  - Оронд нь getByRole, getByLabel, getByText,
+    data-testid зэрэг хэрэглэгчийн харагдах UI-
+    тэй ойр locator хэрэглэсэн.

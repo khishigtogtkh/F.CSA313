@@ -26,3 +26,8 @@ yarn-error.log*
 # OS files
 .DS_Store
 Thumbs.db
+
+# Lab 06 - PICT
+/lab6/pict/
+/lab6/build/
+/lab6/*.docx

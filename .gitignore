@@ -28,6 +28,6 @@ yarn-error.log*
 Thumbs.db
 
 # Lab 06 - PICT
-/lab6/pict/
-/lab6/build/
+pict/
+build/
 /lab6/*.docx

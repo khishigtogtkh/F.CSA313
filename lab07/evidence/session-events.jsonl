@@ -1,0 +1,64 @@
+{"at":"2026-10-25T14:29:19.762Z","action":"session-start","details":{"charterCommit":"f32b58bd2b312bb6537acae33195e704f701906a","appSha256":"a2158dc202e62a18f11adcc0feca1d84fb6c6a9ec269b8eb63bc72f10eb27c6c"}}
+{"at":"2026-10-25T14:29:20.429Z","action":"environment","details":{"node":"v22.23.2","browser":"Chromium 153.0.8010.12","playwright":"1.63.0","os":"Ubuntu 24.04.3 LTS / WSL2","kernel":"Linux 6.18.54.1-microsoft-standard-WSL2","viewport":{"width":1280,"height":800},"headless":true}}
+{"at":"2026-10-25T14:29:20.731Z","action":"baseline","details":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах"],"stats":"Нийт ном: 4 · Хамгийн шинэ он: 2008","message":""}}
+{"at":"2026-10-25T14:29:26.169Z","action":"task-start","details":{"action":"baseline"}}
+{"at":"2026-10-25T14:29:26.289Z","action":"baseline","details":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах"],"stats":"Нийт ном: 4 · Хамгийн шинэ он: 2008","message":""}}
+{"at":"2026-10-25T14:29:26.331Z","action":"delete-button-color","details":"rgb(44, 122, 75)"}
+{"at":"2026-10-25T14:29:26.388Z","action":"screenshot","details":"bug-01"}
+{"at":"2026-10-25T14:29:26.431Z","action":"screenshot","details":"bug-02"}
+{"at":"2026-10-25T14:29:26.480Z","action":"screenshot","details":"bug-03"}
+{"at":"2026-10-25T14:29:26.606Z","action":"add","details":{"input":{"title":"Refactoring","author":"Martin Fowler","year":"2018"},"result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах","Refactoring\tMartin Fowler\t2,018\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2018","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:29:26.654Z","action":"screenshot","details":"bug-01-after-add"}
+{"at":"2026-10-25T14:29:26.654Z","action":"task-end","details":"baseline"}
+{"at":"2026-10-25T14:29:26.654Z","action":"task-start","details":{"action":"duplicate"}}
+{"at":"2026-10-25T14:29:26.873Z","action":"add","details":{"input":{"title":"Clean Code","author":"Robert C. Martin","year":"2008"},"result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2008","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:29:27.043Z","action":"search","details":{"input":"Clean Code","result":{"rows":["Clean Code\tRobert C. Martin\t2,008\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2008","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:29:27.086Z","action":"screenshot","details":"bug-04"}
+{"at":"2026-10-25T14:29:27.086Z","action":"task-end","details":"duplicate"}
+{"at":"2026-10-25T14:29:27.086Z","action":"task-start","details":{"action":"invalid"}}
+{"at":"2026-10-25T14:29:27.305Z","action":"add","details":{"input":{"title":"Invalid Year Probe","author":"Session Tester","year":"abc"},"result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах","Invalid Year Probe\tSession Tester\tNaN\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2008","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:29:27.351Z","action":"screenshot","details":"bug-05"}
+{"at":"2026-10-25T14:29:27.351Z","action":"task-end","details":"invalid"}
+{"at":"2026-10-25T14:29:27.351Z","action":"task-start","details":{"action":"api"}}
+{"at":"2026-10-25T14:29:27.494Z","action":"invalid-json","details":{"command":"curl -sS -i -X POST http://localhost:3000/api/books -H 'Content-Type: application/json' -d 'not-json'","response":"HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nDate: Sun, 25 Oct 2026 14:29:27 GMT\r\nConnection: keep-alive\r\nKeep-Alive: timeout=5\r\nTransfer-Encoding: chunked\r\n\r\n{\"result\":\"OK\"}","after":[{"id":1,"title":"Тунгалаг Тамир","author":"Ч.Лодойдамба","year":1971},{"id":2,"title":"Clean Code","author":"Robert C. Martin","year":2008},{"id":3,"title":"The Pragmatic Programmer","author":"D.Thomas & A.Hunt","year":1999}]}}
+{"at":"2026-10-25T14:29:27.494Z","action":"task-end","details":"api"}
+{"at":"2026-10-25T14:29:58.410Z","action":"task-start","details":{"action":"add","title":"","author":"","year":""}}
+{"at":"2026-10-25T14:29:58.750Z","action":"add","details":{"input":{"title":"","author":"","year":""},"result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах","\t\t0\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2008","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:29:58.750Z","action":"task-end","details":"add"}
+{"at":"2026-10-25T14:29:58.751Z","action":"task-start","details":{"action":"add","title":"Year 999","author":"Session Tester","year":"999"}}
+{"at":"2026-10-25T14:29:59.033Z","action":"add","details":{"input":{"title":"Year 999","author":"Session Tester","year":"999"},"result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах","Year 999\tSession Tester\t999\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2008","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:29:59.033Z","action":"task-end","details":"add"}
+{"at":"2026-10-25T14:29:59.033Z","action":"task-start","details":{"action":"add","title":"Year 1000","author":"Session Tester","year":"1000"}}
+{"at":"2026-10-25T14:29:59.322Z","action":"add","details":{"input":{"title":"Year 1000","author":"Session Tester","year":"1000"},"result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах","Year 1000\tSession Tester\t1,000\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2008","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:29:59.322Z","action":"task-end","details":"add"}
+{"at":"2026-10-25T14:29:59.323Z","action":"task-start","details":{"action":"add","title":"Year 2100","author":"Session Tester","year":"2100"}}
+{"at":"2026-10-25T14:29:59.639Z","action":"add","details":{"input":{"title":"Year 2100","author":"Session Tester","year":"2100"},"result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах","Year 2100\tSession Tester\t2,100\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2100","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:29:59.639Z","action":"task-end","details":"add"}
+{"at":"2026-10-25T14:29:59.639Z","action":"task-start","details":{"action":"add","title":"Year 2101","author":"Session Tester","year":"2101"}}
+{"at":"2026-10-25T14:29:59.881Z","action":"add","details":{"input":{"title":"Year 2101","author":"Session Tester","year":"2101"},"result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах","Year 2101\tSession Tester\t2,101\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2101","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:29:59.881Z","action":"task-end","details":"add"}
+{"at":"2026-10-25T14:29:59.881Z","action":"task-start","details":{"action":"add","title":"Decimal Year","author":"Session Tester","year":"2008.5"}}
+{"at":"2026-10-25T14:30:00.099Z","action":"add","details":{"input":{"title":"Decimal Year","author":"Session Tester","year":"2008.5"},"result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах","Decimal Year\tSession Tester\t2,008.5\tУстгах"],"stats":"Нийт ном: 5 · Хамгийн шинэ он: 2008.5","message":"Ном нэмэгдлээ"}}}
+{"at":"2026-10-25T14:30:00.099Z","action":"task-end","details":"add"}
+{"at":"2026-10-25T14:30:00.099Z","action":"task-start","details":{"action":"search","queries":["Robert C. Martin","Тунгалаг","Clean Code","clean code","NoSuchBook-20261025",""]}}
+{"at":"2026-10-25T14:30:00.387Z","action":"search","details":{"input":"Robert C. Martin","result":{"rows":["Clean Code\tRobert C. Martin\t2,008\tУстгах"],"stats":"Нийт ном: 4 · Хамгийн шинэ он: 2008","message":""}}}
+{"at":"2026-10-25T14:30:00.568Z","action":"search","details":{"input":"Тунгалаг","result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах"],"stats":"Нийт ном: 4 · Хамгийн шинэ он: 2008","message":""}}}
+{"at":"2026-10-25T14:30:00.735Z","action":"search","details":{"input":"Clean Code","result":{"rows":["Clean Code\tRobert C. Martin\t2,008\tУстгах"],"stats":"Нийт ном: 4 · Хамгийн шинэ он: 2008","message":""}}}
+{"at":"2026-10-25T14:30:00.901Z","action":"search","details":{"input":"clean code","result":{"rows":[],"stats":"Нийт ном: 4 · Хамгийн шинэ он: 2008","message":""}}}
+{"at":"2026-10-25T14:30:01.068Z","action":"search","details":{"input":"NoSuchBook-20261025","result":{"rows":[],"stats":"Нийт ном: 4 · Хамгийн шинэ он: 2008","message":""}}}
+{"at":"2026-10-25T14:30:01.236Z","action":"search","details":{"input":"","result":{"rows":["Тунгалаг Тамир\tЧ.Лодойдамба\t1,971\tУстгах","Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах"],"stats":"Нийт ном: 4 · Хамгийн шинэ он: 2008","message":""}}}
+{"at":"2026-10-25T14:30:01.236Z","action":"task-end","details":"search"}
+{"at":"2026-10-25T14:30:01.237Z","action":"task-start","details":{"action":"delete"}}
+{"at":"2026-10-25T14:30:01.414Z","action":"delete","details":{"rows":["Clean Code\tRobert C. Martin\t2,008\tУстгах","The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах"],"stats":"Нийт ном: 3 · Хамгийн шинэ он: 2008","message":"Ном нэмэгдлээ"}}
+{"at":"2026-10-25T14:30:01.481Z","action":"delete","details":{"rows":["The Pragmatic Programmer\tD.Thomas & A.Hunt\t1,999\tУстгах"],"stats":"Нийт ном: 2 · Хамгийн шинэ он: 1999","message":"Ном нэмэгдлээ"}}
+{"at":"2026-10-25T14:30:01.547Z","action":"delete","details":{"rows":[],"stats":"Нийт ном: 1 · Хамгийн шинэ он: 0","message":"Ном нэмэгдлээ"}}
+{"at":"2026-10-25T14:30:01.547Z","action":"task-end","details":"delete"}
+{"at":"2026-10-25T14:30:01.547Z","action":"task-start","details":{"action":"viewport"}}
+{"at":"2026-10-25T14:30:01.655Z","action":"narrow-viewport","details":{"viewport":375,"documentWidth":410,"addButton":{"x":298.1875,"y":154.4375,"width":70.609375,"height":27,"top":154.4375,"right":368.796875,"bottom":181.4375,"left":298.1875}}}
+{"at":"2026-10-25T14:30:01.726Z","action":"screenshot","details":"narrow-viewport"}
+{"at":"2026-10-25T14:30:01.734Z","action":"task-end","details":"viewport"}
+{"at":"2026-10-25T14:30:01.734Z","action":"task-start","details":{"action":"old"}}
+{"at":"2026-10-25T14:30:01.896Z","action":"old-link","details":{"status":500,"body":"Internal Server Error"}}
+{"at":"2026-10-25T14:30:01.896Z","action":"task-end","details":"old"}
+{"at":"2026-10-25T14:31:51.673Z","action":"task-start","details":{"action":"finish","reason":"Бодит дахин шалгалт дуусав; энэ нь 60 минутын exploratory session биш. Хугацааг нэмэгдүүлж зохиогоогүй."}}
+{"at":"2026-10-25T14:31:51.673Z","action":"session-end","details":{"reason":"Бодит дахин шалгалт дуусав; энэ нь 60 минутын exploratory session биш. Хугацааг нэмэгдүүлж зохиогоогүй."}}

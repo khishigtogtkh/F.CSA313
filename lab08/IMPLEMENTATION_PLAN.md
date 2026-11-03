@@ -13,11 +13,13 @@
 - [x] Prompt, AI оролцооны тайлбар, бүх бодит гаралт болон README дүгнэлтүүд.
 - [x] Репогийн үндсэн .github/workflows/test.yml болон бодит badge URL локалд бэлтгэсэн.
 - [x] Үе шат тус бүрийн бодит локал commit-ууд.
-- [ ] Локал репогоос тусдаа цэвэр clone хийж эцсийн 10 тест, бүртгэгдсэн файлуудыг шалгах.
+- [x] Локал репогоос тусдаа цэвэр clone хийсэн: 10/0/0/0, BUILD SUCCESS; бүх шаардлагатай файл ирсэн, target эхэнд байгаагүй.
 
 ## Шалгах гол нотолгоо
 
 Үндсэн README: starter/README.md. Ногоон гаралт: starter/results/mvn-test.txt. Үндсэн мутацууд: starter/results/mvn-test-mutant-1.txt, mvn-test-mutant-2.txt, mvn-test-mutant-3.txt. AI гаралтууд: starter/results/ai-comparison/. Java/Maven орчин: starter/results/environment.txt. Мутацийг давтах: starter дотроос `bash scripts/run-mutations.sh main` эсвэл `bash scripts/run-mutations.sh ai`.
+
+Цэвэр clone-ийн нотолгоо: starter/results/mvn-test-clean-clone.txt; шалгасан commit `2aea6faa16b1215cb04463d03a833af2e110bcc4`.
 
 ## Хэрэглэгчийн хийх илгээлт
 

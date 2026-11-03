@@ -1,0 +1,71 @@
+Local clean-clone verification (not a GitHub clone)
+Source: /home/hishigtogtokh/F.CSA313
+Branch: codex/lab08-mockito
+Destination: /tmp/lab08-clone.fk1xS4/F.CSA313
+2026-11-03T21:18:41+08:00
+Cloning into '/tmp/lab08-clone.fk1xS4/F.CSA313'...
+Cloned commit: 2aea6faa16b1215cb04463d03a833af2e110bcc4
+PASS: required files present; target absent before build; unwanted files not tracked; original src/main.
+.github/workflows/test.yml
+lab08/.gitignore
+lab08/IMPLEMENTATION_PLAN.md
+lab08/starter/README.md
+lab08/starter/ai-comparison/prompt.md
+lab08/starter/pom.xml
+lab08/starter/results/ai-comparison/mvn-test-mutant-1.txt
+lab08/starter/results/ai-comparison/mvn-test-mutant-2.txt
+lab08/starter/results/ai-comparison/mvn-test-mutant-3.txt
+lab08/starter/results/ai-comparison/mvn-test.txt
+lab08/starter/results/environment.txt
+lab08/starter/results/mvn-test-mutant-1.txt
+lab08/starter/results/mvn-test-mutant-2.txt
+lab08/starter/results/mvn-test-mutant-3.txt
+lab08/starter/results/mvn-test.txt
+lab08/starter/scripts/run-mutations.sh
+lab08/starter/src/main/java/mn/edu/must/sqat/CourseRegistrationService.java
+lab08/starter/src/main/java/mn/edu/must/sqat/EmailSender.java
+lab08/starter/src/main/java/mn/edu/must/sqat/Student.java
+lab08/starter/src/main/java/mn/edu/must/sqat/StudentRepository.java
+lab08/starter/src/test/java/mn/edu/must/sqat/CourseRegistrationServiceAiComparison.java
+lab08/starter/src/test/java/mn/edu/must/sqat/CourseRegistrationServiceTest.java
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< mn.edu.must.sqat:lab08-mockito >-------------------
+[INFO] Building lab08-mockito 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ lab08-mockito ---
+[INFO] skip non existing resourceDirectory /tmp/lab08-clone.fk1xS4/F.CSA313/lab08/starter/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ lab08-mockito ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 4 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ lab08-mockito ---
+[INFO] skip non existing resourceDirectory /tmp/lab08-clone.fk1xS4/F.CSA313/lab08/starter/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ lab08-mockito ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ lab08-mockito ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running mn.edu.must.sqat.CourseRegistrationServiceTest
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.692 s -- in mn.edu.must.sqat.CourseRegistrationServiceTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.092 s
+[INFO] Finished at: 2026-11-03T21:18:55+08:00
+[INFO] ------------------------------------------------------------------------

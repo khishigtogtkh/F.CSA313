@@ -34,10 +34,10 @@ cd /home/hishigtogtokh/F.CSA313/lab08/starter
 mvn test
 ```
 
-Салбарыг GitHub-д push хийсний дараа өөр хавтаст:
+GitHub-ийн main салбарыг өөр хавтаст татах:
 
 ```bash
-git clone --branch codex/lab08-mockito https://github.com/khishigtogtkh/F.CSA313.git
+git clone --branch main https://github.com/khishigtogtkh/F.CSA313.git
 cd F.CSA313/lab08/starter
 mvn test
 ```
@@ -151,11 +151,11 @@ AI-ийн гурван мутантын файл тус бүр `BUILD FAILURE`; 
 
 ## Нэмэлт CI
 
-[![Lab08 Mockito tests](https://github.com/khishigtogtkh/F.CSA313/actions/workflows/test.yml/badge.svg?branch=codex%2Flab08-mockito)](https://github.com/khishigtogtkh/F.CSA313/actions/workflows/test.yml?query=branch%3Acodex%2Flab08-mockito)
+[![Lab08 Mockito tests](https://github.com/khishigtogtkh/F.CSA313/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/khishigtogtkh/F.CSA313/actions/workflows/test.yml?query=branch%3Amain)
 
 [Workflow](../../.github/workflows/test.yml) нь push, pull request, workflow_dispatch үйл явдлаар Ubuntu, Temurin Java 17 орчинд үндсэн 10 тестийг ажиллуулна. Maven cache нь лабораторийн POM-оор түлхүүрлэгдэнэ; workflow зөвхөн `contents: read` эрхтэй.
 
-**CI төлөв:** workflow локалд бэлэн; GitHub-д push хийгээгүй, Actions үүлэн гүйлт болон ногоон badge хараахан батлагдаагүй. Дээрх badge нь бодит workflow-ийн хаяг бөгөөд хиймэл ногоон зураг биш. AI-ийн улаан мутацийн гүйлтийг CI-ийн ногоон үндсэн тесттэй хольж ажиллуулахгүй.
+**CI төлөв:** workflow main салбарт бэлэн; энэ нийтлэлтийн Actions үүлэн гүйлт болон ногоон badge хараахан батлагдаагүй. Дээрх badge нь бодит workflow-ийн хаяг бөгөөд хиймэл ногоон зураг биш. AI-ийн улаан мутацийн гүйлтийг CI-ийн ногоон үндсэн тесттэй хольж ажиллуулахгүй.
 
 ## Нэгтгэсэн дүгнэлт
 
@@ -169,11 +169,11 @@ Mockito mock нь хамаарлын хариуг тохируулж, дууда
 
 Starter, A1–A8, үндсэн мутаци, AI харьцуулалт, README/CI гэсэн үе шатуудыг дуусах бүрд тусдаа локал commit хийсэн. `git log --oneline -- lab08 .github/workflows/test.yml` командаар бодит дарааллыг харж болно. Эвдэрсэн service хувилбаруудыг commit хийгээгүй.
 
-Энэ ажлын хүрээ нь локал бэлтгэл. GitHub-ийн public төлөв болон Assignment-ийн due date-ийг энэ гүйлтээр шалгаагүй; GitHub push, үүлэн CI, Teams илгээлт хийгдээгүй.
+GitHub репо public, default branch нь main болохыг GitHub API-аар баталсан. Lab08-ийн үе шатны commit-уудыг main руу fast-forward нэгтгэсэн; нийтлэлт болон үүлэн CI-г дараагийн шалгалтаар батална. Assignment-ийн due date-ийг шалгаагүй, Teams илгээлт хийгээгүй.
 
 Илгээхэд үлдсэн алхмууд:
 
-1. GitHub репо public байгааг шалгаад `git push -u origin codex/lab08-mockito` ажиллуулах.
+1. GitHub репо public байгааг шалгаад `git push origin main` ажиллуулах.
 2. Actions-ийн ногоон гүйлт болон badge-ийг шалгах.
 3. GitHub-ээс өөр цэвэр хавтаст clone хийж `lab08/starter` дотроос `mvn test` ажиллуулах.
 4. Teams Assignment-д public репогийн холбоос хавсаргаж, `lab08/starter` байршлыг тодруулан due date-ээс өмнө **Turn in** дарах.

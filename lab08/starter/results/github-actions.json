@@ -1,0 +1,52 @@
+{
+  "repository": "khishigtogtkh/F.CSA313",
+  "public": true,
+  "verified_at": "2026-11-03T13:44:51.164748+00:00",
+  "run": {
+    "id": 41646754658,
+    "head_branch": "main",
+    "head_sha": "5e58c2c018f72fa94364a2635eac9a62bdd1eeee",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/khishigtogtkh/F.CSA313/actions/runs/41646754658",
+    "created_at": "2026-11-03T13:42:35Z",
+    "updated_at": "2026-11-03T13:43:06Z"
+  },
+  "jobs": [
+    {
+      "name": "test",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Checkout repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Java 17",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run the ten required tests",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Java 17",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Checkout repository",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

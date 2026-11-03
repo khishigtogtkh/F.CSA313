@@ -63,6 +63,8 @@ F.CSA313/
             ├── environment.txt
             ├── mvn-test.txt
             ├── mvn-test-clean-clone.txt
+            ├── mvn-test-github-clone.txt
+            ├── github-actions.json
             ├── mvn-test-mutant-1.txt
             ├── mvn-test-mutant-2.txt
             ├── mvn-test-mutant-3.txt
@@ -155,7 +157,7 @@ AI-ийн гурван мутантын файл тус бүр `BUILD FAILURE`; 
 
 [Workflow](../../.github/workflows/test.yml) нь push, pull request, workflow_dispatch үйл явдлаар Ubuntu, Temurin Java 17 орчинд үндсэн 10 тестийг ажиллуулна. Maven cache нь лабораторийн POM-оор түлхүүрлэгдэнэ; workflow зөвхөн `contents: read` эрхтэй.
 
-**CI төлөв:** workflow main салбарт бэлэн; энэ нийтлэлтийн Actions үүлэн гүйлт болон ногоон badge хараахан батлагдаагүй. Дээрх badge нь бодит workflow-ийн хаяг бөгөөд хиймэл ногоон зураг биш. AI-ийн улаан мутацийн гүйлтийг CI-ийн ногоон үндсэн тесттэй хольж ажиллуулахгүй.
+**CI төлөв:** main салбарын `5e58c2c018f72fa94364a2635eac9a62bdd1eeee` commit дээрх [GitHub Actions гүйлт](https://github.com/khishigtogtkh/F.CSA313/actions/runs/41646754658) нь `completed / success` болсон. Run болон job/step-ийн бодит төлөвийг [JSON нотолгоонд](results/github-actions.json) хадгалсан. Дээрх badge нь main салбарын бодит workflow-ийн төлөвийг харуулна. AI-ийн улаан мутацийн гүйлтийг CI-ийн ногоон үндсэн тесттэй хольж ажиллуулахгүй.
 
 ## Нэгтгэсэн дүгнэлт
 
@@ -165,16 +167,17 @@ Mockito mock нь хамаарлын хариуг тохируулж, дууда
 
 [Бодит гаралт](results/mvn-test-clean-clone.txt)-д локал репогоос `--no-local` сонголттой тусдаа `/tmp` хавтаст clone хийсэн commit, байрлал, файлын бүрдэл болон `mvn test`-ийн гаралт байна. Шалгасан commit: `2aea6faa16b1215cb04463d03a833af2e110bcc4`; build хийхээс өмнө `target` байхгүй, зааврын DOCX/IDE/build файлууд бүртгэгдээгүй, бүх тест ба найман үндсэн/AI нотолгооны файл ирсэн. Цэвэр clone дээр энгийн `mvn test` нь `Tests run: 10, Failures: 0, Errors: 0, Skipped: 0`, `BUILD SUCCESS` болсон. Энэ нь локал clone-ийн баталгаа бөгөөд GitHub-ээс clone хийсэн шалгалтыг орлохгүй.
 
+## GitHub main-аас цэвэр clone-ийн шалгалт
+
+Public GitHub репогийн main салбарыг тусдаа `/tmp` хавтаст шинээр clone хийгээд `mvn test` ажиллуулсан [бодит гаралт](results/mvn-test-github-clone.txt)-ыг хадгалсан. Шалгасан commit: `5e58c2c018f72fa94364a2635eac9a62bdd1eeee`; 10 тест, 0 failure, 0 error, 0 skipped, `BUILD SUCCESS`. Тестийн эх код, мутацийн бүх нотолгоо clone-д ирсэн; build хийхийн өмнө `target` байхгүй, зааврын DOCX/IDE/build файл бүртгэгдээгүй, `src/main` анхны starter-тай таарсан.
+
 ## Git түүх ба илгээлт
 
 Starter, A1–A8, үндсэн мутаци, AI харьцуулалт, README/CI гэсэн үе шатуудыг дуусах бүрд тусдаа локал commit хийсэн. `git log --oneline -- lab08 .github/workflows/test.yml` командаар бодит дарааллыг харж болно. Эвдэрсэн service хувилбаруудыг commit хийгээгүй.
 
-GitHub репо public, default branch нь main болохыг GitHub API-аар баталсан. Lab08-ийн үе шатны commit-уудыг main руу fast-forward нэгтгэсэн; нийтлэлт болон үүлэн CI-г дараагийн шалгалтаар батална. Assignment-ийн due date-ийг шалгаагүй, Teams илгээлт хийгээгүй.
+GitHub репо public, default branch нь main болохыг GitHub API-аар баталсан. Lab08-ийн үе шатны commit-уудыг main руу fast-forward нэгтгэж origin/main-д push хийсэн; үүлэн CI болон GitHub-ээс цэвэр clone хийсэн тест хоёулаа амжилттай. Assignment-ийн due date-ийг шалгаагүй, Teams илгээлт хийгээгүй.
 
 Илгээхэд үлдсэн алхмууд:
 
-1. GitHub репо public байгааг шалгаад `git push origin main` ажиллуулах.
-2. Actions-ийн ногоон гүйлт болон badge-ийг шалгах.
-3. GitHub-ээс өөр цэвэр хавтаст clone хийж `lab08/starter` дотроос `mvn test` ажиллуулах.
-4. Teams Assignment-д public репогийн холбоос хавсаргаж, `lab08/starter` байршлыг тодруулан due date-ээс өмнө **Turn in** дарах.
-5. Teams дээр илгээгдсэн төлөвийг шалгах; архив, screenshot нь шаардсан текстэн нотолгоо болон Turn in-ийг орлохгүй.
+1. Teams Assignment-д [public репогийн холбоос](https://github.com/khishigtogtkh/F.CSA313) хавсаргаж, `lab08/starter` байршлыг тодруулан due date-ээс өмнө **Turn in** дарах.
+2. Teams дээр илгээгдсэн төлөвийг шалгах; архив, screenshot нь шаардсан текстэн нотолгоо болон Turn in-ийг орлохгүй.

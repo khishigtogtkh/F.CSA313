@@ -1,0 +1,25 @@
+name: Lab08 Mockito tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+          cache-dependency-path: lab08/starter/pom.xml
+      - name: Run the ten required tests
+        run: mvn -B --no-transfer-progress -f lab08/starter/pom.xml test

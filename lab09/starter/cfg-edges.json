@@ -1,0 +1,177 @@
+[
+  {
+    "edge": "E1",
+    "from": "S",
+    "to": "N1",
+    "condition": "",
+    "test": "scholarshipAwards100"
+  },
+  {
+    "edge": "E2",
+    "from": "N1",
+    "to": "X",
+    "condition": "T",
+    "test": "scholarshipRejectsNegativeGpa"
+  },
+  {
+    "edge": "E3",
+    "from": "N1",
+    "to": "N2",
+    "condition": "F",
+    "test": "scholarshipAwards100"
+  },
+  {
+    "edge": "E4",
+    "from": "N2",
+    "to": "X",
+    "condition": "T",
+    "test": "scholarshipRejectsGpaAboveFour"
+  },
+  {
+    "edge": "E5",
+    "from": "N2",
+    "to": "N3",
+    "condition": "F",
+    "test": "scholarshipAwards100"
+  },
+  {
+    "edge": "E6",
+    "from": "N3",
+    "to": "X",
+    "condition": "T",
+    "test": "scholarshipRejectsNegativeCredits"
+  },
+  {
+    "edge": "E7",
+    "from": "N3",
+    "to": "N4",
+    "condition": "F",
+    "test": "scholarshipAwards100"
+  },
+  {
+    "edge": "E8",
+    "from": "N4",
+    "to": "R0a",
+    "condition": "T",
+    "test": "scholarshipReturnsZeroForViolation"
+  },
+  {
+    "edge": "E9",
+    "from": "N4",
+    "to": "N5",
+    "condition": "F",
+    "test": "scholarshipAwards100"
+  },
+  {
+    "edge": "E10",
+    "from": "N5",
+    "to": "N6",
+    "condition": "T",
+    "test": "scholarshipAwards100"
+  },
+  {
+    "edge": "E11",
+    "from": "N5",
+    "to": "N7",
+    "condition": "F",
+    "test": "scholarshipAwards70"
+  },
+  {
+    "edge": "E12",
+    "from": "N6",
+    "to": "R100",
+    "condition": "T",
+    "test": "scholarshipAwards100"
+  },
+  {
+    "edge": "E13",
+    "from": "N6",
+    "to": "N7",
+    "condition": "F",
+    "test": "scholarshipAwards70WhenCreditsBelow15"
+  },
+  {
+    "edge": "E14",
+    "from": "N7",
+    "to": "N8",
+    "condition": "T",
+    "test": "scholarshipAwards70"
+  },
+  {
+    "edge": "E15",
+    "from": "N7",
+    "to": "N9",
+    "condition": "F",
+    "test": "scholarshipReturnsZeroBelowGpa3"
+  },
+  {
+    "edge": "E16",
+    "from": "N8",
+    "to": "R70",
+    "condition": "T",
+    "test": "scholarshipAwards70"
+  },
+  {
+    "edge": "E17",
+    "from": "N8",
+    "to": "N9",
+    "condition": "F",
+    "test": "scholarshipAwards50WhenCreditsBelow12"
+  },
+  {
+    "edge": "E18",
+    "from": "N9",
+    "to": "R50",
+    "condition": "T",
+    "test": "scholarshipAwards50WhenCreditsBelow12"
+  },
+  {
+    "edge": "E19",
+    "from": "N9",
+    "to": "R0b",
+    "condition": "F",
+    "test": "scholarshipReturnsZeroBelowGpa3"
+  },
+  {
+    "edge": "E20",
+    "from": "X",
+    "to": "Z",
+    "condition": "",
+    "test": "scholarshipRejectsNegativeGpa"
+  },
+  {
+    "edge": "E21",
+    "from": "R0a",
+    "to": "Z",
+    "condition": "",
+    "test": "scholarshipReturnsZeroForViolation"
+  },
+  {
+    "edge": "E22",
+    "from": "R100",
+    "to": "Z",
+    "condition": "",
+    "test": "scholarshipAwards100"
+  },
+  {
+    "edge": "E23",
+    "from": "R70",
+    "to": "Z",
+    "condition": "",
+    "test": "scholarshipAwards70"
+  },
+  {
+    "edge": "E24",
+    "from": "R50",
+    "to": "Z",
+    "condition": "",
+    "test": "scholarshipAwards50WhenCreditsBelow12"
+  },
+  {
+    "edge": "E25",
+    "from": "R0b",
+    "to": "Z",
+    "condition": "",
+    "test": "scholarshipReturnsZeroBelowGpa3"
+  }
+]

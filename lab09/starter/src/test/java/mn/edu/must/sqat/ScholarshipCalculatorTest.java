@@ -26,4 +26,6 @@ class ScholarshipCalculatorTest {
     @Test void scholarshipAwards70WhenCreditsBelow15() { assertEquals(70, calculator.scholarship(3.9,14,false)); }
     @Test void scholarshipAwards50WhenCreditsBelow12() { assertEquals(50, calculator.scholarship(3.5,11,false)); }
     @Test void scholarshipReturnsZeroBelowGpa3() { assertEquals(0, calculator.scholarship(2.9,16,false)); }
+    @Test void gpaHandlesSingleScore() { assertEquals(4.0, calculator.gpa(new double[]{95}), 1e-9); }
+    @Test void gpaHandlesMultipleScores() { assertEquals(2.5, calculator.gpa(new double[]{95,85,75,65}), 1e-9); }
 }

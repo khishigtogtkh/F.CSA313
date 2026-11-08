@@ -84,3 +84,10 @@ CFG нь AI-аар үүсгэсэн лавлах хэвээр; гараар да
 Teams-ийн Lab09 due date болон Turn in төлөвийг энэ орчноос баталгаажуулаагүй.
 AI нь CFG лавлах зураг, ирмэгийн жагсаалт, README болон Git ажлын тусламжид мөн ашиглагдсан.
 Нэмэлт coverage gate, Lab09 CI, AI харьцуулалт хийгээгүй. Одоо байгаа GitHub Actions нь Lab08-ыг шалгадаг.
+
+### Цэвэр clone ба GitHub байршуулалт
+
+Локал репогийн `056c626` commit-ийг шинэ хавтсанд `git clone --no-local` хийж, `mvn verify` ажиллуулахад 29 тест ногоон, final CSV яг ижил гарсан: [лог](results/mvn-verify-local-clone.txt).
+Энэ нь GitHub remote-оос хийсэн шалгалт биш.
+GitHub main руу push хийх оролдлого `could not read Username for 'https://github.com'` алдаагаар зогссон тул шинэ commit-ууд локалд байна.
+Нэвтрэлтийг тохируулсны дараа push, remote clone шалгалт, гараар зурсан CFG, Teams Turn in-г дуусгах шаардлагатай.

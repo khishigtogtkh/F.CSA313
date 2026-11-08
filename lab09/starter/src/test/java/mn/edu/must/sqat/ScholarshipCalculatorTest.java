@@ -28,4 +28,11 @@ class ScholarshipCalculatorTest {
     @Test void scholarshipReturnsZeroBelowGpa3() { assertEquals(0, calculator.scholarship(2.9,16,false)); }
     @Test void gpaHandlesSingleScore() { assertEquals(4.0, calculator.gpa(new double[]{95}), 1e-9); }
     @Test void gpaHandlesMultipleScores() { assertEquals(2.5, calculator.gpa(new double[]{95,85,75,65}), 1e-9); }
+    @Test void letterGradeReturnsDAt60() { assertEquals("D", calculator.letterGrade(60)); }
+    @Test void letterGradeReturnsFAt5999() { assertEquals("F", calculator.letterGrade(59.99)); }
+    @Test void letterGradeReturnsDAt6999() { assertEquals("D", calculator.letterGrade(69.99)); }
+    @Test void letterGradeReturnsFAtZero() { assertEquals("F", calculator.letterGrade(0)); }
+    @Test void letterGradeReturnsAAt100() { assertEquals("A", calculator.letterGrade(100)); }
+    @Test void letterGradeReturnsBAt8999() { assertEquals("B", calculator.letterGrade(89.99)); }
+    @Test void letterGradeReturnsAAt90() { assertEquals("A", calculator.letterGrade(90)); }
 }

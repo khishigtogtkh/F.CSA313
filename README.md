@@ -7,7 +7,7 @@
 
 ## Лаборатори 09 — JaCoCo
 
-[Бүрэн тайлан ба илгээлтийн төлөв](lab09/starter/README.md) · [CFG лавлах](lab09/starter/cfg.png)
+[Бүрэн тайлан](lab09/starter/README.md) · [scholarship() функцийн CFG](lab09/starter/cfg.png)
 
 ```bash
 git clone https://github.com/khishigtogtkh/F.CSA313.git
@@ -15,7 +15,7 @@ cd F.CSA313
 mvn -f lab09/starter/pom.xml verify
 ```
 
-29 тест; Line ба Branch 100%. Гараар зурах CFG болон Teams илгээлт үлдсэн.
+29 тест; Line ба Branch 100%. CFG дээр E1–E25 ирмэгийг шалгасан тестийн нэрүүд болон нөхцөлүүдийн T/F чиглэлийг тэмдэглэсэн.
 
 ### Lab09 хэмжилтийн орчин
 

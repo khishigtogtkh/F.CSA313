@@ -12,4 +12,6 @@ class BonusTest {
  @Test void BX_nullAndNegative() { assertThrows(IllegalArgumentException.class, () -> DataFlowTargets.bonus(null,-1)); }
  @Test void BB_longerThanFive() { assertEquals(8, DataFlowTargets.bonus(new int[]{2,2,2,2,2,2},0)); }
  @Test void BB_negativeMeansAbsent() { assertEquals(5, DataFlowTargets.bonus(new int[]{-1,1},1)); }
+ @Test void BM2_separatedRuns_doNotEarnStreakBonus() { assertEquals(0, DataFlowTargets.bonus(new int[]{1,1,1,0,1,1,1,1},8)); }
+ @Test void BB_allAbsent() { assertEquals(0, DataFlowTargets.bonus(new int[]{0,0},1)); }
 }

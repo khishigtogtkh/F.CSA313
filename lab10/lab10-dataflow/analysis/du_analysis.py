@@ -12,7 +12,8 @@ def trace(a,t):
         if path: edges.append((str(path[-1]),str(line)))
         path.append(line)
         for v,kind in uses:
-            d,idx=defs[v]; pairs[(v,d,line,kind)]=path[idx:].copy()
+            d,idx=defs[v]; key=(v,d,line,kind)
+            if key not in pairs or len(path[idx:]) < len(pairs[key]): pairs[key]=path[idx:].copy()
         for v in writes: defs[v]=(line,len(path)-1)
     step(31,writes=('attendance','threshold'))
     step('32a', [('attendance','p-'+('T' if a is None else 'F'))])
@@ -45,7 +46,7 @@ def main():
     while universe-covered:
         a,t=max(candidates,key=lambda c:len(set(trace(*c)[0])-covered))
         chosen.append((f'BD{len(chosen)+1}_duWitness',a,t));covered.update(trace(a,t)[0])
-    chosen += [('BX_nullAndNegative',None,-1),('BB_longerThanFive',[2,2,2,2,2,2],0),('BB_negativeMeansAbsent',[-1,1],1)]
+    chosen += [('BX_nullAndNegative',None,-1),('BB_longerThanFive',[2,2,2,2,2,2],0),('BB_negativeMeansAbsent',[-1,1],1),('BM2_separatedRuns_doNotEarnStreakBonus',[1,1,1,0,1,1,1,1],8),('BB_allAbsent',[0,0],1)]
     ledger={}; edge_tests={};body=[]
     for name,a,t in chosen:
         pairs,path,edges,score=trace(a,t)
@@ -58,6 +59,7 @@ def main():
     (ROOT/'src/test/java/mn/edu/must/sqat/BonusTest.java').write_text('package mn.edu.must.sqat;\nimport org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\nclass BonusTest {\n'+'\n'.join(body)+'\n}\n')
     lines=['| Variable | Def | Use | Kind | Def-clear witness | Test IDs | Covered |','|---|---|---|---|---|---|---|']
     for (v,d,u,k),hits in sorted(ledger.items(),key=lambda x:tuple(map(str,x[0]))):
+        hits.sort(key=lambda h:len(h[1]))
         lines.append(f'| {v} | {d} | {u} | {k} | '+ ' → '.join(map(str,hits[0][1]))+' | '+', '.join(n for n,_ in hits)+' | Yes |')
     (ROOT/'analysis/bonus-du.md').write_text('\n'.join(lines)+'\n')
     (ROOT/'analysis/witnesses.json').write_text(json.dumps({'tests':chosen,'edges':[(a,b,sorted(ns)) for (a,b),ns in edge_tests.items()]},indent=2))

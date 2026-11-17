@@ -76,6 +76,28 @@
         1
       ],
       1
+    ],
+    [
+      "BM2_separatedRuns_doNotEarnStreakBonus",
+      [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      8
+    ],
+    [
+      "BB_allAbsent",
+      [
+        0,
+        0
+      ],
+      1
     ]
   ],
   "edges": [
@@ -83,6 +105,7 @@
       "31",
       "32a",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
@@ -92,6 +115,7 @@
         "BD5_duWitness",
         "BD6_duWitness",
         "BD7_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus",
         "BX_nullAndNegative"
       ]
     ],
@@ -99,6 +123,7 @@
       "32a",
       "32b",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
@@ -106,81 +131,94 @@
         "BD3_duWitness",
         "BD4_duWitness",
         "BD5_duWitness",
-        "BD7_duWitness"
+        "BD7_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "32b",
       "35",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
         "BD3_duWitness",
         "BD4_duWitness",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "35",
       "36",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
         "BD3_duWitness",
         "BD4_duWitness",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "36",
       "37",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
         "BD3_duWitness",
         "BD4_duWitness",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "37",
       "38c",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
         "BD3_duWitness",
         "BD4_duWitness",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "38c",
       "38d",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "38d",
       "39",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
@@ -191,7 +229,8 @@
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
@@ -202,7 +241,8 @@
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
@@ -213,7 +253,8 @@
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
@@ -224,7 +265,8 @@
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
@@ -235,66 +277,78 @@
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "39",
       "46",
       [
+        "BB_allAbsent",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
-        "BD2_allDefs_score51to56"
+        "BD2_allDefs_score51to56",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "46",
       "38c",
       [
+        "BB_allAbsent",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
-        "BD2_allDefs_score51to56"
+        "BD2_allDefs_score51to56",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "42",
       "38c",
       [
-        "BD1_allDefs_score49to54"
+        "BD1_allDefs_score49to54",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "38c",
       "49",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
         "BD3_duWitness",
         "BD4_duWitness",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "49",
       "50",
       [
+        "BB_allAbsent",
         "BB_longerThanFive",
         "BB_negativeMeansAbsent",
         "BD1_allDefs_score49to54",
         "BD2_allDefs_score51to56",
         "BD3_duWitness",
         "BD4_duWitness",
-        "BD5_duWitness"
+        "BD5_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
       "50",
       "53",
       [
+        "BB_allAbsent",
         "BD1_allDefs_score49to54",
-        "BD3_duWitness"
+        "BD3_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [
@@ -341,10 +395,12 @@
       "53",
       "56",
       [
+        "BB_allAbsent",
         "BB_negativeMeansAbsent",
         "BD2_allDefs_score51to56",
         "BD3_duWitness",
-        "BD4_duWitness"
+        "BD4_duWitness",
+        "BM2_separatedRuns_doNotEarnStreakBonus"
       ]
     ],
     [

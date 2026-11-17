@@ -159,6 +159,3 @@ DU анализ хувьсагчийн тодорхой утга хаана үү
 
 Codex нь төлөвлөлт, DU анализ, witness загвар, тест, CFG, мутацийн ажиллуулалт ба тайланд оролцсон. Хүний дангаар хийсэн ажил гэж тайлагнахгүй. Local Maven үр дүнг results-д хадгалсан; GitHub push, public/default branch, Teams Turn in хийгээгүй. Parent F.CSA313 репог ашигласан нь local хүрээний сонголт; багшийн тусдаа root репозиторийн submission шаардлагыг одоогоор гүйцэтгэсэн гэж үзэхгүй.
 
-## Local clone шалгалт
-
-`06d3f0e` commit-ийг `/tmp/lab10-validation-clone` хавтаст local clone хийж `mvn verify` дахин ажиллуулсан: 15 тест, 0 failure/error, BUILD SUCCESS. Гаралт: `results/mvn-verify-clone.txt`. Clone-ийн JaCoCo CSV нь `jacoco-final.csv`-тэй byte-for-byte ижил. `git diff d409a06 -- lab10/lab10-dataflow/src/main` хоосон; эх код starter-тэй ижил. Багшийн Word болон Zone.Identifier файлуудыг диск дээр хэвээр үлдээсэн, Git-д нэмээгүй.

@@ -1,0 +1,6 @@
+Rank 0 gathered 4096 points from 4 ranks after 100 steps -> ../results/heat-100/Output.csv
+Rank 0 gathered 4096 points from 4 ranks after 1000 steps -> ../results/heat-1000/Output.csv
+Rank 0 gathered 4096 points from 4 ranks after 1 steps -> /tmp/tmp.RuxEYXRbBf
+PASS 100 steps: 4096 ordered points, max MPI/serial error 0
+PASS 1000 steps: 4096 ordered points, max MPI/serial error 0
+PASS Rank 0 -> Rank 1: position 1024 is 25.0 after one step

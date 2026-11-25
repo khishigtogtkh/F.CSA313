@@ -1,0 +1,13 @@
+{
+  "name": "lab04-chat",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "demo": "node demo.js"
+  },
+  "dependencies": {
+    "socket.io": "4.8.3",
+    "socket.io-client": "4.8.3"
+  }
+}

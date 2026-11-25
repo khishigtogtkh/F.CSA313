@@ -71,28 +71,36 @@ Playwright Codegen-ийг дараах командаар туршсан:
 
 ```bash
 npx playwright codegen https://www.saucedemo.com
+```
 
+Codegen нь браузерт хийсэн үйлдлийг бичиж, Playwright тестийн код болон locator санал болгодог.
 
- - Playwright нь browser-уудыг өөрөө удирдаж,
-    Chromium/Firefox/WebKit дээр нэг API-аар
-    тестлэдэг.
+## Playwright ба Selenium-ийн харьцуулалт
 
-  - Auto-wait нь элемент бэлэн болохыг хүлээдэг
-    тул тогтворгүй тест багасна.
+Playwright нь Chromium, Firefox, WebKit дээр нэг API-аар тест ажиллуулдаг.
+Selenium WebDriver нь Chrome, Firefox, Edge, Safari зэрэг браузерыг удирдах боломжтой.
+Playwright нь товч дарахаас өмнө элемент харагдаж, үйлдэл хийхэд бэлэн болохыг автоматаар хүлээдэг.
+Selenium-д элемент эсвэл хуудас тодорхой төлөвт орохыг хүлээх нөхцөлийг explicit wait-ээр тохируулж болдог.
+Playwright-ийн Codegen нь браузерын үйлдлийг тестийн код болгон бичиж, Trace Viewer нь тухайн тестийн алхам болон алдааг харах боломж олгодог.
+Selenium нь Java, Python зэрэг олон хэлний binding-тэй бөгөөд Selenium Grid-ээр тестийг өөр өөр машин, браузерт хуваарилан ажиллуулж болдог.
+Энэ лабораторид Playwright Test-ийн Chromium project-оор SauceDemo-ийн гурван сценарийг ажиллуулсан.
 
-  - Trace, screenshot, video зэрэг debugging
-    хэрэгслүүд шууд байдаг.
+## Locator сонголт
 
-  - Selenium нь олон хэл, grid болон хуучин
-    enterprise орчинд өргөн хэрэглэгддэг.
+DOM-ийн шатлалд тулгуурласан XPath нь элемент өөр контейнерт шилжихэд эвдэрч болдог тул ашиглаагүй.
+Тестэд Login товчийг `getByRole()`, хэрэглэгчийн нэрийн талбарыг `getByPlaceholder()`, Products гарчгийг `getByText()`-ээр олсон.
+Сагсны тоог `locator('.shopping_cart_badge')`-аар шалгасан.
 
-  - Энэ лабораторид Playwright-ийг хурдан
-    тохиргоо, parallel project, codegen-ийн давуу
-    талаас сонгосон.
+## Унасан тестийн trace
 
-  - XPath ашиглаагүй; DOM бүтэц эсвэл CSS class
-    өөрчлөгдөхөд XPath амархан эвдэрдэг.
+Амжилттай нэвтрэх тестийн URL assertion-д түр буруу утга өгч, `/inventory.html` хуудас руу шилжсэн үед assertion унасныг trace-д хадгалсан. Trace-ийг `lab1` хавтсаас нээнэ.
 
-  - Оронд нь getByRole, getByLabel, getByText,
-    data-testid зэрэг хэрэглэгчийн харагдах UI-
-    тэй ойр locator хэрэглэсэн.
+```bash
+npx playwright show-trace docs/trace.zip
+```
+
+Бүтэн тестийн багцыг дараах командаар ажиллуулна.
+
+```bash
+npx playwright test
+```

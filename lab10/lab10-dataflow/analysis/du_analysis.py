@@ -1,9 +1,10 @@
 """Source-level trace ledger; binary attendance represents the a>0 partition.
 Enumerates witnesses, not a replacement for static def-clear review.
 """
-from itertools import product
+from itertools import groupby, product
 from pathlib import Path
 import json
+from textwrap import wrap
 ROOT=Path(__file__).resolve().parents[1]
 
 def trace(a,t):
@@ -38,6 +39,19 @@ def trace(a,t):
     if best>=5:step(54,[('score','c')],('score',));score+=3
     step(56,[('score','c')]);return pairs,path,edges,score
 
+def display_name(test_id, pairs):
+    groups = []
+    ordered_pairs = sorted(pairs, key=lambda pair: tuple(map(str, pair)))
+    for variable, uses in groupby(ordered_pairs, key=lambda pair: pair[0]):
+        targets = []
+        for _, definition, use, kind in uses:
+            branch = kind[-1] if kind.startswith('p-') else ''
+            targets.append(f'{definition}->{use}{branch}')
+        groups.append(f'{variable} ' + ', '.join(targets))
+    label = f'{test_id}: ' + '; '.join(groups)
+    lines = wrap(label, width=90, break_on_hyphens=False, break_long_words=False)
+    return ' @DisplayName("' + ' "\n     + "'.join(lines) + '")'
+
 def main():
     seeds=[('BD1_allDefs_score49to54',[1,1,1,1,1,0,1],8),('BD2_allDefs_score51to56',[0,1],1)]
     candidates=[(list(a),t) for n in range(9) for a in product((0,1),repeat=n) for t in sorted({0,n,n+1})]+[(None,0),([], -1),(None,-1)]
@@ -55,8 +69,10 @@ def main():
         arr='null' if a is None else 'new int[]{'+','.join(map(str,a))+'}'
         call=f'DataFlowTargets.bonus({arr},{t})'
         assertion=f'assertThrows(IllegalArgumentException.class, () -> {call});' if score is None else f'assertEquals({score}, {call});'
+        if name.endswith('_duWitness'):
+            body.append(display_name(name.split('_', 1)[0], pairs))
         body.append(f' @Test void {name}() {{ {assertion} }}')
-    (ROOT/'src/test/java/mn/edu/must/sqat/BonusTest.java').write_text('package mn.edu.must.sqat;\nimport org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\nclass BonusTest {\n'+'\n'.join(body)+'\n}\n')
+    (ROOT/'src/test/java/mn/edu/must/sqat/BonusTest.java').write_text('package mn.edu.must.sqat;\nimport org.junit.jupiter.api.DisplayName;\nimport org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\nclass BonusTest {\n'+'\n'.join(body)+'\n}\n')
     lines=['| Variable | Def | Use | Kind | Def-clear witness | Test IDs | Covered |','|---|---|---|---|---|---|---|']
     for (v,d,u,k),hits in sorted(ledger.items(),key=lambda x:tuple(map(str,x[0]))):
         hits.sort(key=lambda h:len(h[1]))

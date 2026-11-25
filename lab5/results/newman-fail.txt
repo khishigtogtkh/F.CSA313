@@ -1,0 +1,164 @@
+(node:75523) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+Lab05 — Хичээлд бүртгүүлэх API (санаатай FAIL)
+
+❏ C01 — Идэвхтэй оюутан амжилттай бүртгүүлнэ
+↳ PUT /students/B231234567
+  PUT http://localhost:3000/students/B231234567 [200 OK, 178B, 44ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ PUT /courses/CS313
+  PUT http://localhost:3000/courses/CS313 [200 OK, 178B, 8ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ POST /registrations
+  POST http://localhost:3000/registrations [201 Created, 202B, 4ms]
+  1. HTTP статус
+  ✓  result утга
+  ✓  registrationID нь тоо
+
+❏ C02 — Байхгүй оюутан ERROR_NO_STUDENT авна
+↳ PUT /courses/lab05-c02-course
+  PUT http://localhost:3000/courses/lab05-c02-course [200 OK, 178B, 4ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ POST /registrations
+  POST http://localhost:3000/registrations [200 OK, 192B, 5ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+❏ C03 — Идэвхгүй оюутан ERROR_INACTIVE_STUDENT авна
+↳ PUT /students/lab05-c03-student
+  PUT http://localhost:3000/students/lab05-c03-student [200 OK, 178B, 4ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ PUT /courses/lab05-c03-course
+  PUT http://localhost:3000/courses/lab05-c03-course [200 OK, 178B, 5ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ POST /registrations
+  POST http://localhost:3000/registrations [200 OK, 198B, 6ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+❏ C04 — Байхгүй хичээл ERROR_NO_COURSE өгнө
+↳ PUT /students/lab05-c04-student
+  PUT http://localhost:3000/students/lab05-c04-student [200 OK, 178B, 9ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ POST /registrations
+  POST http://localhost:3000/registrations [200 OK, 191B, 6ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+❏ C05 — Дутуу урьдач хичээл ERROR_PREREQUISITES өгнө
+↳ PUT /students/lab05-c05-student
+  PUT http://localhost:3000/students/lab05-c05-student [200 OK, 178B, 5ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ PUT /courses/lab05-c05-course
+  PUT http://localhost:3000/courses/lab05-c05-course [200 OK, 178B, 4ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ POST /registrations
+  POST http://localhost:3000/registrations [200 OK, 215B, 6ms]
+  ✓  HTTP статус
+  ✓  result утга
+  ✓  Зөвхөн CS202 дутуу
+
+❏ C06 — Идэвхгүй оюутан ба байхгүй хичээл
+↳ PUT /students/lab05-c06-student
+  PUT http://localhost:3000/students/lab05-c06-student [200 OK, 178B, 4ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ POST /registrations
+  POST http://localhost:3000/registrations [200 OK, 198B, 3ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+❏ C07 — Идэвхгүй оюутан ба дутуу урьдач хичээл
+↳ PUT /students/lab05-c07-student
+  PUT http://localhost:3000/students/lab05-c07-student [200 OK, 178B, 4ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ PUT /courses/lab05-c07-course
+  PUT http://localhost:3000/courses/lab05-c07-course [200 OK, 178B, 5ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ POST /registrations
+  POST http://localhost:3000/registrations [200 OK, 198B, 4ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+❏ C08 — Урьдач нөхцөлгүй хичээлд амжилттай бүртгүүлнэ
+↳ PUT /students/lab05-c08-student
+  PUT http://localhost:3000/students/lab05-c08-student [200 OK, 178B, 3ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ PUT /courses/lab05-c08-course
+  PUT http://localhost:3000/courses/lab05-c08-course [200 OK, 178B, 4ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ POST /registrations
+  POST http://localhost:3000/registrations [201 Created, 202B, 4ms]
+  ✓  HTTP статус
+  ✓  result утга
+  ✓  registrationID нь тоо
+
+❏ C09 — courseID дутуу үед ERROR_BAD_REQUEST авна
+↳ PUT /students/lab05-c09-student
+  PUT http://localhost:3000/students/lab05-c09-student [200 OK, 178B, 3ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ PUT /courses/lab05-c09-course
+  PUT http://localhost:3000/courses/lab05-c09-course [200 OK, 178B, 3ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+↳ POST /registrations
+  POST http://localhost:3000/registrations [400 Bad Request, 202B, 4ms]
+  ✓  HTTP статус
+  ✓  result утга
+
+┌─────────────────────────┬─────────────────┬─────────────────┐
+│                         │        executed │          failed │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              iterations │               1 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│                requests │              24 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│            test-scripts │              24 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│      prerequest-scripts │               0 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              assertions │              51 │               1 │
+├─────────────────────────┴─────────────────┴─────────────────┤
+│ total run duration: 757ms                                   │
+├─────────────────────────────────────────────────────────────┤
+│ total data received: 537B (approx)                          │
+├─────────────────────────────────────────────────────────────┤
+│ average response time: 6ms [min: 3ms, max: 44ms, s.d.: 7ms] │
+└─────────────────────────────────────────────────────────────┘
+
+[31m  # [39m[31m failure        [39m[31m detail                                                                    [39m
+[90m    [39m[90m                [39m[90m                                                                           [39m
+ 1.  AssertionError  HTTP статус                                                               
+                     expected response to have status code 200 but got 201                     
+                     at assertion:0 in test-script                                             
+                     inside "C01 — Идэвхтэй оюутан амжилттай бүртгүүлнэ / POST /registrations" 
